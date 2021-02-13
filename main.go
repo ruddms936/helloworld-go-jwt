@@ -244,9 +244,33 @@ func CreateTodo(c *gin.Context) {
 	c.JSON(http.StatusCreated, td)
 }
 
+// 매개 변수로 전달된 UUID에 해당하는 Redis의 레코드를 삭제합니다.
+func DeleteAuth(givenUuid string) (int64, error) {
+	deleted, err := client.Del(givenUuid).Result()
+	if err != nil {
+		return 0, err
+	}
+	return deleted, nil
+}
+
+func Logout(c *gin.Context) {
+	au, err := ExtractTokenMetadata(c.Request)
+	if err != nil {
+		c.JSON(http.StatusUnauthorized, "unauthorized")
+		return
+	}
+	deleted, delErr := DeleteAuth(au.AccessUuid)
+	if delErr != nil || deleted == 0 {
+		c.JSON(http.StatusUnauthorized, "unauthorized")
+		return
+	}
+	c.JSON(http.StatusOK, "Successfully logged out")
+}
+
 func main() {
 	router.POST("/login", Login)
 	router.POST("/todo", CreateTodo)
+	router.POST("/logout", Logout)
 
 	log.Fatal(router.Run(":8080"))
 }
