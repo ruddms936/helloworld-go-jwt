@@ -6,13 +6,13 @@ golang의 gin 프레임 워크를 이용하여 제작한 인증서버입니다.
 
 # Spec
 
-| 카테고리  | 내용   | 비고                                |
-| --------- | ------ | ----------------------------------- |
-| Editor    | vscode |                                     |
-| Language  | go     | v1.15                               |
-| Framework | gin    | v1.6.3                              |
-| DB        | redis  | token을 관리하기 위해서 사용됩니다. |
-| Protocal  | OAuth  | jwt 이용하여 구현되었습니다.        |
+| 카테고리      | 내용   | 비고                                |
+| ------------- | ------ | ----------------------------------- |
+| Editor        | vscode |                                     |
+| Language      | go     | v1.15                               |
+| Framework     | gin    | v1.6.3                              |
+| DB            | redis  | token을 관리하기 위해서 사용됩니다. |
+| 인증 Protocal | OAuth  | jwt 이용하여 구현되었습니다.        |
 
 # 필수
 
