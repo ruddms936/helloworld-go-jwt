@@ -1,6 +1,6 @@
 @Host = http://localhost:8080
-@AccessToken = ""
-@RefreshToken = ""
+@AccessToken = 일부로 "" 없습니다. 발급된 accessToken을 넣으세요
+@RefreshToken = "발급된 refreshToken을 넣으세요"
 
 ### 로그인 (AccessToken 발급)
 
