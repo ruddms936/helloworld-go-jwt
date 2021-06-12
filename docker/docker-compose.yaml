@@ -1,8 +1,7 @@
+version: "3.7"
 services:
-  db:
-    image: ""
-    container_name: ""
-    volumes:
-      - ""
+  redis:
+    image: redis
+    container_name: redis-master
     ports:
-      - 3306:3306
+      - 6379:6379
