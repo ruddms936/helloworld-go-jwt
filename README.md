@@ -26,3 +26,7 @@ golang의 gin 프레임 워크를 이용하여 제작한 인증서버입니다.
 1. `docker-compose up -d` 으로 redis server를 활성화 합니다.
 1. vscode에서 `F5` 으로 디버깅 모드를 활성화합니다.
 1. `api-sample.http`를 참고하여 API Spec에 맞게 요청을 보내봅니다.
+
+# history
+
+1. `github.com/dgrijalva/jwt-go` 을 사용하여 구현되어있었지만 [해당 저장소가 더 이상 유지 관리되지 않는다고](https://github.com/dgrijalva/jwt-go#this-repository-is-no-longer-maintaned) 하여 공식적으로 가이드 하는 [`github.com/golang-jwt/jwt/v4` 으로 마이그레이션](https://github.com/golang-jwt/jwt/blob/main/MIGRATION_GUIDE.md) 되었습니다.
